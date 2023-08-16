@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao B</title>
+
+    <script>
+        function calculoFatorial() {
+            var number = parseInt(document.getElementById("numInput").value);
+
+            if (isNaN(number) || number < 0) {
+                document.getElementById("demo").innerHTML = "Invalid input";
+                return;
+            }
+
+            var result = 1;
+            for (var i = 2; i <= number; i++) {
+                result *= i;
+            }
+
+            document.getElementById("demo").innerHTML = "Fatorial: "+ result;
+        }
+    </script>
+    
+</head>
+<body>
+
+    <label>Digite um Numero: </label>
+
+    <input type="number" id="numInput">
+
+    <button onclick="calculoFatorial()">Calcular</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+    public class calculadoraFatorial {
+        public static long calculoFatorial(int n) {
+            if (n == 0 || n == 1) {
+                return 1;
+            } else {
+                return n * calculoFatorial(n - 1);
+            }
+        }
+    }
+
+    </script>
+    
+</body>
+</html>

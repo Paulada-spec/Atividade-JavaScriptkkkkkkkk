@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao C</title>
+
+    <script>
+         function calculateAverage() {
+            const inputValues = document.getElementById("numbersInput").value;
+            const numbers = inputValues.split(",").map(num => parseFloat(num));
+
+            const average = calculateAverage(numbers);
+            document.getElementById("result").innerHTML = isNaN(average) ? "Invalid input" : `Average: ${average.toFixed(2)}`;
+        }
+    </script>
+
+</head>
+<body>
+
+    <label>Digite numeros separados por virgula: </label>
+    <input type="text" id="numbersInput">
+    <button onclick="calculateAverage()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+
+function calculateAverage(numbers) {
+    const sum = numbers.reduce((total, num) => total + num, 0);
+    return sum / numbers.length || 0;
+}
+
+    </script>
+    
+</body>
+</html>

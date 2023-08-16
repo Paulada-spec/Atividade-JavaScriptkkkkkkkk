@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questao C</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+
+var repete = ['macaco', 'sorriso', 'macaco', 'sorriso'];
+var novorepete = repete.filter(function(este, i) {
+    return repete.indexOf(este) === i;
+});
+
+    document.getElementById("demo").innerHTML = novorepete;
+
+    </script>
+    
+</body>
+</html>

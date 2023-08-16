@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Par ou Ímpar</title>
+    <script>
+        function verificar() {
+            var numero = parseInt(document.getElementById("numeroInput").value);
+            
+            if (isNaN(numero)) {
+                document.getElementById("resultado").innerHTML = "Por favor, insira um número válido.";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("resultado").innerHTML = "O número é: " + xhr.responseText;
+                }
+            };
+            xhr.open("GET", "verificar?numero=" + numero, true);
+            xhr.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificar Par ou Ímpar</h1>
+    <p>Insira um número:</p>
+    <input type="text" id="numeroInput">
+    <button onclick="verificar()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+
+        public class ParImparChecker {
+    public static String verificarParOuImpar(int numero) {
+        if (numero % 2 == 0) {
+            return "Par";
+        } else {
+            return "Ímpar";
+        }
+        }
+    }
+
+    </script>
+</body>
+</html>
